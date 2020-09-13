@@ -36,7 +36,6 @@ function allGameTypes(){
 var gameTypes = new allGameTypes();
 fs.appendFileSync('pids.txt', process.pid + "\n");
 
-//var configFile = process.argv[2];
 var configFile = "config3030.txt";
 if(configFile == undefined){
   //console.error()
