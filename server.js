@@ -36,7 +36,8 @@ function allGameTypes(){
 var gameTypes = new allGameTypes();
 fs.appendFileSync('pids.txt', process.pid + "\n");
 
-var configFile = "config3030.txt";
+//var configFile = "config3030.txt";
+var configFile = process.argv[2];
 if(configFile == undefined){
   //console.error()
   console.error("Please specify a config file to use in the form: npm start config.txt");

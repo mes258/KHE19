@@ -1,0 +1,5 @@
+3032
+Mountian Top
+Conquer the mountian and hold the flag the longest in this King of the Hill game.
+maps/KOTHMountian.json
+true

@@ -1,0 +1,5 @@
+3033
+First Town
+Launch through buildings and explore underground tunnels on Blockball's first full size map.
+maps/firstTown.json
+false
