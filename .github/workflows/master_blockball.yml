@@ -42,6 +42,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'blockball'
-        slot-name: 'blockball-ctf'
+        slot-name: 'ctf'
         publish-profile: ${{ secrets.PUBLISHPROFILE_CTF }}
         package: .
