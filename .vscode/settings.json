@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/11faa5c6-23dc-4569-94b7-598fe6756944/resourceGroups/BlockBall/providers/Microsoft.Web/sites/BlockBall",
+  "appService.deploySubpath": "."
+}

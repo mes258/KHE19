@@ -5,7 +5,7 @@ var app = express();
 var http = require('http').createServer(app);
 var io = sio(http);
 
-var port; //runs on heroku or localhost:3030
+var port = process.env.PORT || 3030; //runs on heroku or localhost:3030
 
 //Server Specific Values: 
 var MAPFILE = "";
@@ -55,7 +55,7 @@ fs.readFile(configFile, "utf-8", function(err, data) {
     console.log("--------");
   }else{
     content = data.split("\n");
-    port = content[0];
+    //port = content[0];
     SERVER_NAME = content[1];
     SERVER_DESCRIPTION = content[2];
     MAPFILE = content[3];
