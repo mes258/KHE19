@@ -23,7 +23,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm start &
+        npm start config3030.txt &
         
 
     - name: 'Deploy to Azure Web App'
