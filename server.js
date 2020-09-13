@@ -9,7 +9,7 @@ var port = process.env.PORT || 3030; //runs on heroku or localhost:3030
 
 //Server Specific Values: 
 var MAPFILE = "";
-MAPFILE = process.argv[3];
+//MAPFILE = process.argv[3];
 var SERVER_NAME = 'UNSET SERVER NAME';
 var SERVER_DESCRIPTION = "NO DESCRIPTION";
 var ALLOWGAMERESTARTS = true;
@@ -36,8 +36,8 @@ function allGameTypes(){
 var gameTypes = new allGameTypes();
 fs.appendFileSync('pids.txt', process.pid + "\n");
 
-//var configFile = "config3030.txt";
-var configFile = process.argv[2];
+var configFile = "config3030.txt";
+//var configFile = process.argv[2];
 if(configFile == undefined){
   //console.error()
   console.error("Please specify a config file to use in the form: npm start config.txt");
