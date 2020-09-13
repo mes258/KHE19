@@ -33,3 +33,15 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_edf6858cf59c4b34b6dfec36afffaf67 }}
         package: .
+        
+    - name: npm install, build, and test
+      run: |
+        npm start config3031.txt &
+        
+    - name: 'Deploy to Azure Web App'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'blockball'
+        slot-name: 'blockball-ctf'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_edf6858cf59c4b34b6dfec36afffaf67 }}
+        package: .
