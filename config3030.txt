@@ -1,0 +1,5 @@
+3030
+Islands
+Explore a world of floating islands in a Free For All game.
+maps/islands.json
+true
