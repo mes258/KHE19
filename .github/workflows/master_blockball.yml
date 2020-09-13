@@ -25,7 +25,6 @@ jobs:
         npm install
         npm start config3030.txt &
         
-
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
@@ -34,14 +33,25 @@ jobs:
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_edf6858cf59c4b34b6dfec36afffaf67 }}
         package: .
         
-    - name: npm install, build, and test
-      run: |
-        npm start config3031.txt &
+  deploy_to_ctf:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
         
-    - name: 'Deploy CTF to Azure Web App'
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'blockball'
-        slot-name: 'ctf'
-        publish-profile: ${{ secrets.PUBLISHPROFILE_CTF }}
-        package: .
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm start config3031.txt &
+        
+      - name: 'Deploy CTF to Azure Web App'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'blockball'
+          slot-name: 'ctf'
+          publish-profile: ${{ secrets.PUBLISHPROFILE_CTF }}
+          package: .
